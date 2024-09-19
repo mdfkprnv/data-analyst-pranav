@@ -36,8 +36,8 @@
 ### Data Pipeline Design
  - Designed using draw.io to automate data processing stages.
 
-<kbd> <img src="![Screenshot 2024-08-27 114123](https://github.com/user-attachments/assets/7bae6a97-05aa-4f7f-880d-3a9e859b1e5c)" /> </kbd>
-
+<kbd> <img src="![Screenshot 2024-08-27 210913](https://github.com/user-attachments/assets/d9e7ed48-8bd6-40eb-93b4-7ce880f2a2ea)" /> </kbd>
+<kbd> <img src="![Screenshot 2024-08-27 210859](https://github.com/user-attachments/assets/2634bb5f-7f1b-44d6-b8ba-f45e12cd5f3f)" /> </kbd>
 ### Data Analysis
  - Performed using AWS Athena for querying and deriving insights.
    

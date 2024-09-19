@@ -24,7 +24,7 @@
 - Focussed on the procedure ‘Issued Building Permits’ in the Property and Development department for the city of Vancouver. [Data Source Link](https://opendata.vancouver.ca/explore/dataset/issued-building-permits/export/?refine.issuedate=2023)
 - Utilized datasets in Excel Format is as shown below. Insignificant columns have been hidden.
    
-  <kbd> <img src="![Screenshot 2024-09-18 194221](https://github.com/user-attachments/assets/28024c5d-1dea-4620-953a-0441f101a285)" /> </kbd>
+  <kbd> <img src=![Screenshot 2024-09-18 194221](https://github.com/user-attachments/assets/28024c5d-1dea-4620-953a-0441f101a285) /> </kbd>
   
   
 ### Dataset Preparation
@@ -36,29 +36,30 @@
 ### Data Pipeline Design
  - Designed using draw.io to automate data processing stages.
 
-<kbd> <img src="![Screenshot 2024-08-27 210913](https://github.com/user-attachments/assets/d9e7ed48-8bd6-40eb-93b4-7ce880f2a2ea)" /> </kbd>
-<kbd> <img src="![Screenshot 2024-08-27 210859](https://github.com/user-attachments/assets/2634bb5f-7f1b-44d6-b8ba-f45e12cd5f3f)" /> </kbd>
+   <kbd> <img src=![Screenshot 2024-08-27 210913](https://github.com/user-attachments/assets/3179c3ef-2c18-4fad-b9d5-5e1548e9e5a1)
+ /> </kbd>
+
+   <kbd> <img src=![Screenshot 2024-08-27 210859](https://github.com/user-attachments/assets/2634bb5f-7f1b-44d6-b8ba-f45e12cd5f3f) /> </kbd>
 ### Data Analysis
- - Performed using AWS Athena for querying and deriving insights.
+ - AWS Athena service was utilized. Some queries were performed and tables are made for the analysis.
    
 ## AWS Services
- - AWS Services:
-    - Amazon S3 for storage
-    - EC2 for computation
-    - AWS Glue for ETL processes
-    - Athena for data analysis.
+ - The following AWS Services were used:
+    - Storage is done in AWS S3
+    - Computation in EC2
+    - ETL Pipeline and Processes in AWS Glue
+    - Data Analysis in Athena
  
 ## Data Pipeline Implementation:
- - Implemented using AWS Glue for ETL processes.
- - Transformation operations included schema changes, aggregation, and union operations.
-    - Change Schema Operation: The schema of the 2023 and 2024 dataset has been changed by deleting all other columns that are not required and keeping and renaming the columns BI_ID, Year, calls_offered, and calls_handled.
+ - The process was conducted in AWS Glue by utilizing Visual ETL to perform processes.
+ - Multiple transformation operations were perfomred including change schema, aggregation, and join operations.
+    - Change Schema Operation: The structure of the 2023 and 2024 dataset has been changed by deleting all the unnecessary columns and giving meaningful names to the required columns.
     - Aggregate Operation: The aggregate function has been used to aggregate the records of the ‘Year’ column within the 2023 and 2024 dataset.
-    - Union Operation: In order to prepare a collective dataset out of 2023 and 2024 records, the Union function has been utilized to create a new output from all the records of the two similar input datasets.
-    - Change Schema: At this stage, unwanted columns have been deleted by using the change schema operation
-    - Derived Column: At this stage, the matric is calculated by performing the SQL operation
-Calls handled Percentage = (calls_handled/calls_offered) *100.
-   
-   <kbd> <img src="https://github.com/user-attachments/assets/3e9b389a-6083-4f76-97de-90bf7b0b63e2" /> </kbd>
+    - Join Operation: To prepare a collective output, join funnction is used to combine the data by taking the type of work as medium for common column.
+    - Change Schema: Again this operation was used to delete the unnecesssary columns and giving meaninngful names.
+    - Derived Column: This operation is utilized to handle the mathematical equation part. An equation is created and formulated using this.
+  
+   <kbd> <img src=![Screenshot 2024-08-27 114123](https://github.com/user-attachments/assets/687ffe67-501e-4c63-a0a9-f811e043d661) /> </kbd>
 
 ## Data Analysis
  - Data analysis was performed using AWS Athena.
@@ -67,9 +68,9 @@ Calls handled Percentage = (calls_handled/calls_offered) *100.
 
 sql
   --Contact Centre Table --
-CREATE EXTERNAL TABLE `gov_fin_contactcentre_table_vivek`(
+CREATE EXTERNAL TABLE `project1_pad_table_pranav`(
   `year` string, 
-  `percent_of_calls_handled` string)
+  `percent_change_yoy` string)
 ROW FORMAT DELIMITED 
   FIELDS TERMINATED BY ',' 
 STORED AS INPUTFORMAT 
@@ -77,26 +78,25 @@ STORED AS INPUTFORMAT
 OUTPUTFORMAT 
   'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'
 LOCATION
-  's3://project1-gov-fin-vivek-dataset/Government and Finance Domain/Curated/Yearly Analysis'
+  's3://project1-pad-pranav-dataset/Property and Development Domain/Curated/Yearly Report'
 TBLPROPERTIES (
   'classification'='csv', 
   'skip.header.line.count'='1', 
   'transient_lastDdlTime'='1724308959')
 
- - Data as pulled from AWS Athena Database is as shown below:
+ - Table creation from AWS Athena Database is as shown below:
    
-<kbd> <img src="https://github.com/user-attachments/assets/c214f109-7a25-4891-930e-68468c60c921" /> </kbd>
+<kbd> <img src=![step 11](https://github.com/user-attachments/assets/3a660dfc-581c-4f87-9c14-51c60014c888) /> </kbd>
 
-## Outcome
- - General Server and Web Server were set up using Amazon EC2 for internal and external data access.
- - Published the annual analysis report on the percentage of calls handled for public access.
+## Results
+ - General Server and Web Server were set up using AWS EC2 service to make the data available for internal and external access.
+ - The yearly report has been published for public access to reduce communication time and better accessebility.
    
-<kbd> <img src="https://github.com/user-attachments/assets/77a924dd-3efb-46c8-aef0-2a18660fa08f" /> </kbd>
+<kbd> <img src=![Graph Report](https://github.com/user-attachments/assets/6606aea8-71ac-4026-bce9-1d22e1202f0e) /> </kbd>
 
 ## Insights and Findings
- - 2023: The percentage of calls handled was 94.19%, indicating a high efficiency in managing calls at the '3-1-1 contact center' for the City of Vancouver during this year.
- - 2024: The percentage of calls handled dropped slightly to 92.93%. This reduction, although minor, indicates a slight decline in the call-handling efficiency compared to the previous year.
- - Comparison: There is a noticeable decrease of approximately 1.26% in the percentage of calls handled from 2023 to 2024. This could be due to various factors such as an increase in call volume, changes in operational procedures, or resource allocation challenges.
+ - The graph represents the total number of type of work conducted for issued building permits. It can be depicted that some of the work are just conducted rarely but some of them are often and needs the commitment of the labor at all times.
+ - This will help in maintaining the number of workers required around the year and give companies analysis of what to expect from next year.
 
 ## Cost Estimation
  - Amazon S3: Estimated annual expense of $285.846 for storage across four buckets.
@@ -106,7 +106,7 @@ TBLPROPERTIES (
  - EC2: Total yearly cost of $225.96 for hosting general and web servers.
 
 ## Conclusion
- - The project showcases the effectiveness of using AWS cloud services for large-scale data analytics and highlights the capabilities in automating data workflows and gaining insights for city management.
+ - The project demonstrates the showcases the productivity in using the services of AWS cloud for large-scale dataset and highlights the capabilities in automating data workflows and gaining insights for better management.
 
 # Project 2 Objective
  - The objective of this project is to accurately calculate the student graduation rates for the years 2022, 2023 and 2024 at the University Canada West (UCW).
@@ -189,10 +189,9 @@ TBLPROPERTIES (
  - The project aims to provide insights into university graduation rates by using a systematic data processing approach, and the documented pipeline reflects a comprehensive methodology to achieve the objective.
 
 # Project 3 Objective
- - To design and implement a secure, efficient, and scalable Data Analytics Platform (DAP) for the City of Vancouver using AWS cloud services. This platform aims to facilitate the migration, storage, processing, and analysis of city datasets to enhance data-driven decision-making while ensuring data protection, governance, and compliance with privacy standards.
+ - To develop and deploy a secure, efficient, and scalable Data Analytics Platform (DAP) for the City of Vancouver leveraging AWS cloud services. This platform will support the seamless migration, storage, processing, and analysis of city datasets, enabling enhanced data-driven decision-making while ensuring robust data protection, governance, and compliance with privacy regulations.
 
 ## Table of Contents
- - [Data Discovery](#data-discovery)
  - [ETL Workflow](#etl-workflow)
  - [Data protection](#data-protection)
  - [Data Governance](#data-governance)
@@ -202,33 +201,32 @@ TBLPROPERTIES (
  - [Insights and Findings](#insights-and-findings)
  - [Conclusion](#conclusion)
 
-### Data Discovery
-- Focussed on the procedure ‘Awarded Contracts’ in the Government and Finance department for the city of Vancouver. [Link](https://opendata.vancouver.ca/explore/dataset/awarded-contracts/information/?disjunctive.bid_type)
-
 ### ETL Workflow
  - Implemented using AWS Glue for ETL processes.
-<kbd> <img src="https://github.com/user-attachments/assets/dcd7ca1e-b819-48dc-823e-36b33ea2c221" /> </kbd>
+<kbd> <img src="https://github.com/user-attachments/assets/da29dd8c-171f-42ce-89d8-6081de44a800" /> </kbd>
   
 ### Data Protection
- - Identity and Access Management (IAM)
-    - User Access Control: IAM is used to create users, user groups, and roles to manage access to AWS resources. The project assigns specific roles, such as 'LabRole,' to ensure that only authorized users have the necessary permissions.
-<kbd> <img src="https://github.com/user-attachments/assets/0149e8a3-2985-4c67-8a2d-f4e2f6fd329b" /> </kbd>
-    - Policy Creation: Policies are defined to grant the minimum required permissions for users, ensuring that each user or group can access only the resources they need.
- - Encryption and Decryption
-    - AWS Key Management Service (KMS):
-    - Symmetric Key: Used to encrypt and decrypt data using the same key. This key is used for encrypting data stored in Amazon S3 buckets, ensuring that only authorized users can access the data.
-    - Asymmetric Key: A pair of public and private keys is used for encryption and decryption. This method is used for data that requires higher security, allowing encryption with one key and decryption with another.
-<kbd> <img src="https://github.com/user-attachments/assets/78a59c3b-9faa-485b-861e-898709f1e2c2" /> </kbd>
- - Data Storage Security in Amazon S3
-    - Bucket Policies and Access Controls: Access to the S3 buckets is restricted using IAM roles and bucket policies to ensure that only authorized users and services can access the data.
-    - ETL Pipeline Security: The ETL pipeline processes data through AWS Glue with encryption mechanisms to protect data during transformation.
- - Techniques for Integrity Protection
-    - Data Integrity Checks: Encryption and decryption mechanisms ensure that data is secure and unaltered during storage and transmission. For example:
-    - Versioning in S3: Amazon S3 versioning is configured to keep previous versions of objects, preventing data loss from accidental deletions or alterations.
-<kbd> <img src="https://github.com/user-attachments/assets/f4b3f5d4-3739-476a-87df-eba91abe7fd7" /> </kbd>
- - Monitoring and Auditing
-    - Replication:Replication provides data protection by automatically making several copies of the data in different buckets, whether in the same region or different regions.
-<kbd> <img src="https://github.com/user-attachments/assets/c31bf07a-5cfb-4b60-8556-fb0a8a40e6dc" /> </kbd>
+- Identity and Access Management (IAM)
+  - Access Control: IAM is utilized to create users, groups, and roles for managing access to AWS resources. Specific roles, like "LabRole," are assigned to ensure that only authorized individuals have the appropriate permissions.
+  - Policy Creation: Policies are designed to follow the principle of least privilege, granting users or groups only the minimal permissions required to access necessary resources.
+
+- Encryption and Decryption
+  - AWS Key Management Service (KMS):
+  - Symmetric Key: A single key is used for both encryption and decryption. This key is applied to encrypt data in Amazon S3 buckets, ensuring only authorized users can access the stored data.
+  - Asymmetric Key: A pair of public and private keys is used for encryption and decryption. This method is employed for highly sensitive data, enabling encryption with one key and decryption with another.
+
+- Data Storage Security in Amazon S3
+  - Bucket Policies and Access Controls: IAM roles and bucket policies restrict access to S3 buckets, ensuring only authorized users and services can interact with the data.
+  - ETL Pipeline Security: AWS Glue processes data within an encrypted ETL pipeline, protecting data during transformation.
+
+- Techniques for Integrity Protection
+  - Data Integrity Checks: Encryption and decryption mechanisms safeguard data, ensuring it remains unaltered during storage and transmission.
+  - Versioning in S3: Amazon S3 versioning is enabled to maintain previous versions of objects, preventing accidental data loss or changes.
+    <kbd> <img src="https://github.com/user-attachments/assets/8df47c88-d485-4442-a7c7-7e1bd763a642" /> </kbd>
+
+- Monitoring and Auditing
+  - Replication: Replication enhances data protection by automatically creating multiple copies of the data in different S3 buckets, either within the same region or across different regions.
+<kbd> <img src="https://github.com/user-attachments/assets/558156f8-dd5c-4588-bc80-ba3b10c346da" /> </kbd>
 
 ### Data Governance
  - Data Quality Management

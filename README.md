@@ -18,13 +18,13 @@
  -	Researched on the data given for the years 2023 and 2024. A metric is generated “Percentage change Year-on-Year.” The metric will give details on the changes experienced in issued building permits from the year 2023 to 2024.
  -	Percentage change Y-o-Y = (Number of permits issued in 2023/ Number of permits issued in 2024) * 100
    
-   <kbd> <img src=![Screenshot 2024-08-27 182055](https://github.com/user-attachments/assets/c8e5488b-9547-4aca-944f-d0b2a2db7e83) /> </kbd>
+   <kbd> <img src="https://github.com/user-attachments/assets/c8e5488b-9547-4aca-944f-d0b2a2db7e83" /> </kbd>
 
 ### Data Discovery
-- Focussed on the procedure ‘Issued Building Permits’ in the Property and Development department for the city of Vancouver. [Data Source Link](https://opendata.vancouver.ca/explore/dataset/issued-building-permits/export/?refine.issuedate=2023)
+- Focussed on the procedure ‘Issued Building Permits’ in the Property and Development department for the city of Vancouver. [Dataset Link](https://opendata.vancouver.ca/explore/dataset/issued-building-permits/export/?refine.issuedate=2023)
 - Utilized datasets in Excel format are shown below. Insignificant columns have been hidden.
    
-  <kbd> <img src=![Screenshot 2024-09-18 194221](https://github.com/user-attachments/assets/28024c5d-1dea-4620-953a-0441f101a285) /> </kbd>
+  <kbd> <img src="https://github.com/user-attachments/assets/28024c5d-1dea-4620-953a-0441f101a285" /> </kbd>
   
   
 ### Dataset Preparation
@@ -36,10 +36,10 @@
 ### Data Pipeline Design
  - Designed using draw.io to automate data processing stages.
 
-   <kbd> <img src=![Screenshot 2024-08-27 210913](https://github.com/user-attachments/assets/3179c3ef-2c18-4fad-b9d5-5e1548e9e5a1)
+   <kbd> <img src="https://github.com/user-attachments/assets/3179c3ef-2c18-4fad-b9d5-5e1548e9e5a1"
  /> </kbd>
 
-   <kbd> <img src=![Screenshot 2024-08-27 210859](https://github.com/user-attachments/assets/2634bb5f-7f1b-44d6-b8ba-f45e12cd5f3f) /> </kbd>
+   <kbd> <img src="https://github.com/user-attachments/assets/2634bb5f-7f1b-44d6-b8ba-f45e12cd5f3f" /> </kbd>
 ### Data Analysis
  - AWS Athena service was utilized. Some queries were performed, and tables were made for the analysis.
    
@@ -59,7 +59,7 @@
     - Change Schema: Again, this operation was used to delete the unnecessary columns and give meaningful names.
     - Derived Column: This operation is utilized to handle the mathematical equation part. An equation is created and formulated using this.
   
-   <kbd> <img src=![Screenshot 2024-08-27 114123](https://github.com/user-attachments/assets/687ffe67-501e-4c63-a0a9-f811e043d661) /> </kbd>
+   <kbd> <img src="https://github.com/user-attachments/assets/687ffe67-501e-4c63-a0a9-f811e043d661" /> </kbd>
 
 ## Data Analysis
  - Data analysis was performed using AWS Athena.
@@ -86,13 +86,13 @@ TBLPROPERTIES (
 
  - Table creation from AWS Athena Database is as shown below:
    
-<kbd> <img src=![step 11](https://github.com/user-attachments/assets/3a660dfc-581c-4f87-9c14-51c60014c888) /> </kbd>
+<kbd> <img src="https://github.com/user-attachments/assets/3a660dfc-581c-4f87-9c14-51c60014c888" /> </kbd>
 
 ## Results
  - The general Server and Web Server were set up using AWS EC2 service to make the data available for internal and external access.
  - The yearly report has been published for public access to reduce communication time and improve accessibility.
    
-<kbd> <img src=![Graph Report](https://github.com/user-attachments/assets/6606aea8-71ac-4026-bce9-1d22e1202f0e) /> </kbd>
+<kbd> <img src="https://github.com/user-attachments/assets/6606aea8-71ac-4026-bce9-1d22e1202f0e" /> </kbd>
 
 ## Insights and Findings
  - The graph represents the total number of types of work conducted for issued building permits. It can be depicted that some of the work is conducted rarely, but some of it is often and requires commitment from the laborer at all times.

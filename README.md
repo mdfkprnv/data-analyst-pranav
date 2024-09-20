@@ -181,7 +181,7 @@ TBLPROPERTIES (
     - S3 Access Logs: Data access monitoring and auditing.
     - Cost Explorer: Cost tracking and optimization.
       
-## DAP Architectural Anlaysis
+## DAP Architectural Analysis
 
   - Operational Excellence
     - Best Practices: The platform follows AWS best practices to boost operational efficiency, reliability, and scalability. This includes leveraging IAM for granular access control and using AWS Glue for structured data processing.
@@ -230,7 +230,7 @@ TBLPROPERTIES (
  - [Dataset Preparation](#dataset-preparation)
  - [AWS Services](#aws-services)
  - [Data Cleaning and Structuring](#data-cleaning-and-structuring)
- - [Data Pipeline Implementation](#data-pipeline-Implementation)
+ - [Data Pipeline Implementation](#data-pipeline-implementation)
  - [Outcome](#outcome)
  - [Insights and Findings](#insights-and-findings)
  - [Conclusion](#conclusion)
@@ -251,8 +251,8 @@ TBLPROPERTIES (
     - Identifying and handling invalid values, such as null entries in the dataset.
     - Renaming column headers for consistency and clarity.
     - Modifying data types for columns as needed.
-    - Altering the schema, including the addition of new columns.
-    - Creating and publishing data cleaning recipes.
+    - Altering the schema, including adding new columns.
+    - Creating and publishing data-cleaning recipes.
  
 <kbd> <img src="https://github.com/user-attachments/assets/79760bfc-1eea-4858-9209-e6b07352cbfd" /> </kbd>
 
@@ -274,7 +274,7 @@ TBLPROPERTIES (
       
  - Approved Policy Rate (APR) for 2024:
     - The approval rate for the year 2024 is 23.80%.
-    - This shows a depriciation over the 2023 approval rate, suggesting bad decisions from the board and stakeholders.
+    - This shows a depreciation over the 2023 approval rate, suggesting bad decisions from the board and stakeholders.
 
 
 ## Conclusion

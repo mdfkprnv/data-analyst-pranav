@@ -15,7 +15,7 @@
 ## Methodology
 
 ### Data Analytical Question Formulation
- -	Researched on the data given for the years 2023 and 2024. A metric is generated “Percentage change Year-on-Year.” The metric will give details on the changes experienced in issued building permits from the year 2023 to 2024.
+ -	Researched the data given for the years 2023 and 2024. A metric is generated “Percentage change Year-on-Year.” The metric will give details on the changes experienced in issued building permits from the year 2023 to 2024.
  -	Percentage change Y-o-Y = (Number of permits issued in 2023/ Number of permits issued in 2024) * 100
    
    <kbd> <img src="https://github.com/user-attachments/assets/c8e5488b-9547-4aca-944f-d0b2a2db7e83" /> </kbd>
@@ -106,7 +106,7 @@ TBLPROPERTIES (
  - EC2: Total yearly cost of $225.96 for hosting general and web servers.
 
 ## Conclusion
- - The project showcases the productivity in using the services of AWS cloud for large-scale datasets and highlights the capabilities in automating data workflows and gaining insights for better management.
+ - The project showcases the productivity of using the services of AWS cloud for large-scale datasets and highlights the capabilities of automating data workflows and gaining insights for better management.
 
 # Project 2 Objective
  - To develop and deploy a secure, efficient, and scalable Data Analytics Platform (DAP) for the City of Vancouver leveraging AWS cloud services. This platform will support the seamless migration, storage, processing, and analysis of city datasets, enabling enhanced data-driven decision-making while ensuring robust data protection, governance, and compliance with privacy regulations.
@@ -127,7 +127,7 @@ TBLPROPERTIES (
   
 ### Data Protection
 - Identity and Access Management (IAM)
-  - Access Control: IAM is utilized to create users, groups, and roles for managing access to AWS resources. Specific roles, like "LabRole," are assigned to ensure that only authorized individuals have the appropriate permissions.
+  - Access Control: IAM is utilized to create users, groups, and roles to manage access to AWS resources. Specific roles, like "LabRole," are assigned to ensure that only authorized individuals have the appropriate permissions.
   - Policy Creation: Policies are designed to follow the principle of least privilege, granting users or groups only the minimal permissions required to access necessary resources.
 
 - Encryption and Decryption
@@ -162,7 +162,7 @@ TBLPROPERTIES (
  - AWS CloudWatch for Real-Time Monitoring
     - Resource Monitoring: AWS CloudWatch is used to monitor key metrics of AWS resources, such as CPU utilization, memory usage, and network activity. It provides real-time insights into the performance of the data analytics platform.
     - Custom Metrics and Dashboards: CloudWatch allows the creation of custom metrics and dashboards for specific aspects of the data analytics platform. For example, monitoring the status of S3 buckets, ETL pipelines in AWS Glue, and data processing jobs helps track data flow and detect anomalies.
-    - Alarms and Notifications: CloudWatch Alarms are set up to trigger notifications when certain thresholds are breached (e.g., unusually high data access attempts, resource usage spikes). This proactive monitoring helps in identifying and mitigating potential security incidents or performance issues.
+    - Alarms and Notifications: CloudWatch Alarms are set up to trigger notifications when certain thresholds are breached (e.g., unusually high data access attempts and resource usage spikes). This proactive monitoring helps in identifying and mitigating potential security incidents or performance issues.
 <kbd> <img src="https://github.com/user-attachments/assets/4cd98b72-9926-4883-8790-b7caaa13f956" /> </kbd>
  - AWS CloudTrail for Audit Logging
     - Activity Logging: AWS CloudTrail captures and logs all API calls made within the AWS environment. This includes actions performed on data stored in S3, modifications to IAM roles, and operations within AWS Glue.
@@ -199,8 +199,8 @@ TBLPROPERTIES (
     - Data Quality and Integrity: AWS Glue automates data governance to ensure completeness, uniqueness, and data freshness. This automation helps maintain the reliability of datasets used in analysis.
 
   - Performance Efficiency
-    - Optimized Resource Usage: The platform efficiently uses Amazon S3 for storing raw, processed, and curated datasets, handling large volumes of data seamlessly.
-    - Resource Monitoring and Tuning: AWS CloudWatch continuously tracks resource performance, including CPU and memory usage. Bottlenecks are identified in real-time to optimize resource utilization.
+    - Optimized Resource Usage: The platform efficiently uses Amazon S3 to store raw, processed, and curated datasets, handling large volumes of data seamlessly.
+    - Resource Monitoring and Tuning: AWS CloudWatch continuously tracks resource performance, including CPU and memory usage. Bottlenecks are identified in real time to optimize resource utilization.
     - Right Sizing of Resources: The platform allocates resources, like instances and storage, based on performance needs, ensuring optimal resource allocation and avoiding over-provisioning.
 
   - Cost Optimization

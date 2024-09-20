@@ -1,5 +1,5 @@
 # Project 1 Objective
- - The project aims to extract data from the City of Vancouver's website. The dataset is uploaded to an AWS cloud platform and a comprehensive data analytics study has been implemented. 
+ - The project aims to extract data from the City of Vancouver's website. The dataset is uploaded to an AWS cloud platform, and a comprehensive data analytics study has been implemented. 
  - The goal is to streamline data processing, analysis, and visualization for various building permits, ensuring scalability, security, and efficiency in data management.
 
 ## Table of Contents
@@ -22,7 +22,7 @@
 
 ### Data Discovery
 - Focussed on the procedure ‘Issued Building Permits’ in the Property and Development department for the city of Vancouver. [Data Source Link](https://opendata.vancouver.ca/explore/dataset/issued-building-permits/export/?refine.issuedate=2023)
-- Utilized datasets in Excel Format is as shown below. Insignificant columns have been hidden.
+- Utilized datasets in Excel format are shown below. Insignificant columns have been hidden.
    
   <kbd> <img src=![Screenshot 2024-09-18 194221](https://github.com/user-attachments/assets/28024c5d-1dea-4620-953a-0441f101a285) /> </kbd>
   
@@ -41,7 +41,7 @@
 
    <kbd> <img src=![Screenshot 2024-08-27 210859](https://github.com/user-attachments/assets/2634bb5f-7f1b-44d6-b8ba-f45e12cd5f3f) /> </kbd>
 ### Data Analysis
- - AWS Athena service was utilized. Some queries were performed and tables are made for the analysis.
+ - AWS Athena service was utilized. Some queries were performed, and tables were made for the analysis.
    
 ## AWS Services
  - The following AWS Services were used:
@@ -52,11 +52,11 @@
  
 ## Data Pipeline Implementation:
  - The process was conducted in AWS Glue by utilizing Visual ETL to perform processes.
- - Multiple transformation operations were perfomred including change schema, aggregation, and join operations.
-    - Change Schema Operation: The structure of the 2023 and 2024 dataset has been changed by deleting all the unnecessary columns and giving meaningful names to the required columns.
-    - Aggregate Operation: The aggregate function has been used to aggregate the records of the ‘Year’ column within the 2023 and 2024 dataset.
-    - Join Operation: To prepare a collective output, join funnction is used to combine the data by taking the type of work as medium for common column.
-    - Change Schema: Again this operation was used to delete the unnecesssary columns and giving meaninngful names.
+ - Multiple transformation operations were performed, including change schema, aggregation, and join operations.
+    - Change Schema Operation: The structure of the 2023 and 2024 datasets has been changed by deleting all the unnecessary columns and giving meaningful names to the required columns.
+    - Aggregate Operation: The aggregate function has been used to aggregate the records of the ‘Year’ column within the 2023 and 2024 datasets.
+    - Join Operation: To prepare a collective output, the join function is used to combine the data by taking the type of work as a medium for the common column.
+    - Change Schema: Again, this operation was used to delete the unnecessary columns and give meaningful names.
     - Derived Column: This operation is utilized to handle the mathematical equation part. An equation is created and formulated using this.
   
    <kbd> <img src=![Screenshot 2024-08-27 114123](https://github.com/user-attachments/assets/687ffe67-501e-4c63-a0a9-f811e043d661) /> </kbd>
@@ -89,14 +89,14 @@ TBLPROPERTIES (
 <kbd> <img src=![step 11](https://github.com/user-attachments/assets/3a660dfc-581c-4f87-9c14-51c60014c888) /> </kbd>
 
 ## Results
- - General Server and Web Server were set up using AWS EC2 service to make the data available for internal and external access.
- - The yearly report has been published for public access to reduce communication time and better accessebility.
+ - The general Server and Web Server were set up using AWS EC2 service to make the data available for internal and external access.
+ - The yearly report has been published for public access to reduce communication time and improve accessibility.
    
 <kbd> <img src=![Graph Report](https://github.com/user-attachments/assets/6606aea8-71ac-4026-bce9-1d22e1202f0e) /> </kbd>
 
 ## Insights and Findings
- - The graph represents the total number of type of work conducted for issued building permits. It can be depicted that some of the work are just conducted rarely but some of them are often and needs the commitment of the labor at all times.
- - This will help in maintaining the number of workers required around the year and give companies analysis of what to expect from next year.
+ - The graph represents the total number of types of work conducted for issued building permits. It can be depicted that some of the work is conducted rarely, but some of it is often and requires commitment from the laborer at all times.
+ - This will help maintain the number of workers required around the year and give companies an analysis of what to expect from next year.
 
 ## Cost Estimation
  - Amazon S3: Estimated annual expense of $285.846 for storage across four buckets.
@@ -106,89 +106,9 @@ TBLPROPERTIES (
  - EC2: Total yearly cost of $225.96 for hosting general and web servers.
 
 ## Conclusion
- - The project demonstrates the showcases the productivity in using the services of AWS cloud for large-scale dataset and highlights the capabilities in automating data workflows and gaining insights for better management.
+ - The project showcases the productivity in using the services of AWS cloud for large-scale datasets and highlights the capabilities in automating data workflows and gaining insights for better management.
 
 # Project 2 Objective
- - The objective of this project is to accurately calculate the student graduation rates for the years 2022, 2023 and 2024 at the University Canada West (UCW).
- - By leveraging sample data, such as student records and course completion information, this project seeks to uncover key insights into student performance, identify trends, and offer data-driven recommendations to improve future graduation rates.
-
-## Table of Contents
- - [Data Analytical Question Formulation](#data-analytical-question-formulation)
- - [Dataset Preparation](#dataset-preparation)
- - [Data Pipeline Design](#data-pipeline-design)
- - [AWS Services](#aws-services)
- - [Data Cleaning and Structuring](#data-cleaning-and-structuring)
- - [Data Pipeline Implementation](#data-pipeline-Implementation)
- - [Outcome](#outcome)
- - [Insights and Findings](#insights-and-findings)
- - [Conclusion](#conclusion)
-
-## Data Analytical Question Formulation
- - Delved into the sample data for 2022, 2023 and 2024 to produce a metric called “Student Graduation Rate.” The metric will provide the percentage of student graduated in the years 2022, 2023 and 2024, respectively.
- - Percentage of Students Graduated (SGR) = (Number of Student Enrolled/ Number of Student Graduated) * 100
-  
-## Dataset Preparation
- - Sample dataset includes two Excel files
-    - Sample Student Records Information.
-<kbd> <img src="https://github.com/user-attachments/assets/914c6d2a-d87e-43b9-b06e-cde92d67f59c" /> </kbd>
-    - Sample Graduation Records Information.<kbd> <img src="https://github.com/user-attachments/assets/73c8cfc3-deb2-4657-a2f5-ee75d2868d7e" /> </kbd>
-      
-## Data Pipeline Design
- - Designed using draw.io to anlayse data processing stages.
-
-<kbd> <img src="https://github.com/user-attachments/assets/d95b91b5-3d91-4169-8fba-9cd15b5aea17" /> </kbd>
-   
-## AWS Services
- - AWS Services:
-    - Amazon S3 for storage
-    - AWS GlueData Brew for Cleaning and Structuring.
-    - AWS Glue for Data Pipleline.
-
-## Data Cleaning and Structuring
- - It includes operations such as
-    - Checking invalid values in data set such as null rows.
-    - Renaming of coloum names.
-    - Change of Data Type for columns.
-    - Change of Schema (Addition of Coloumn).
-    - Creation and publishing of recipe.
-
-<kbd> <img src="https://github.com/user-attachments/assets/db441eb5-0266-48f6-911c-3c06a8b1f9c6" /> </kbd>
-
-## Data Pipeline Implementation:
- - Implemented using AWS Glue for ETL processes.
- - Transformation operations included schema changes, aggregation, and union operations.
-   
-<kbd> <img src="https://github.com/user-attachments/assets/c5c54041-9b76-4cb8-aac0-682901128319" /> </kbd>
-
-## Outcome
- - Figure shows the determination of metrics as deduced from ETL Glue.
-   
-<kbd> <img src="https://github.com/user-attachments/assets/ef50dbd0-f11f-42d4-9a3e-7052bb8347e6" /> </kbd>
-
-## Insights and Findings
- - Student Graduation Rate (SGR) for 2023:
-    - The graduation rate for the year 2023 is 66.67%.
-    - This indicates that approximately two-thirds of the students enrolled in the relevant programs at UCW successfully graduated in 2023.
-    - This rate reflects a decrease when compared to the previous year (2022).
-      
- - Student Graduation Rate (SGR) for 2024:
-    - The graduation rate for the year 2024 is 69.70%.
-    - This shows a slight improvement over the 2023 graduation rate, suggesting positive changes in student performance or institutional effectiveness.
-    - However, it still falls short of the graduation rate observed in 2022.
-
- - Trend Analysis:
-    - There is a notable fluctuation in the graduation rates over the three years:
-    - 2022: 73.53%
-    - 2023: 66.67% (a decrease from 2022)
-    - 2024: 69.70% (an increase from 2023 but still lower than 2022)
-    - This trend highlights potential areas of concern in student retention or program effectiveness that UCW may need to address.
-
-## Conclusion
- - The project effectively uses AWS Glue DataBrew for data cleaning and transformation, and the ETL pipeline is successfully executed to calculate the student graduation rate.
- - The entire workflow, from data preparation to final output generation, is well-organized with clear steps for extracting, transforming, and loading data into an S3 bucket.
- - The project aims to provide insights into university graduation rates by using a systematic data processing approach, and the documented pipeline reflects a comprehensive methodology to achieve the objective.
-
-# Project 3 Objective
  - To develop and deploy a secure, efficient, and scalable Data Analytics Platform (DAP) for the City of Vancouver leveraging AWS cloud services. This platform will support the seamless migration, storage, processing, and analysis of city datasets, enabling enhanced data-driven decision-making while ensuring robust data protection, governance, and compliance with privacy regulations.
 
 ## Table of Contents
@@ -231,11 +151,8 @@ TBLPROPERTIES (
 ### Data Governance
  - Data Quality Management
     - AWS Glue: ETL Pipeline - The ETL (Extract, Transform, Load) pipeline using AWS Glue is designed to clean, process, and structure the data before it is stored in the "Trusted" zone. This ensures that the data used for analytics is of high quality, complete, and ready for analysis.
-<kbd> <img src="https://github.com/user-attachments/assets/3f36ebff-925c-4c8e-873b-03a76b642771" /> </kbd>
     - Data Quality Checks: During the data processing phase, AWS Glue performs data quality checks to remove duplicates, fill in missing values, and format the data according to predefined standards.
-<kbd> <img src="https://github.com/user-attachments/assets/b1e2a736-8e0e-420a-a01f-f97101d9bee0" /> </kbd>
     - Conditional Routing: Only records that pass data quality checks are moved into the trusted zone, ensuring that the dataset used for analytics is accurate and reliable.
-<kbd> <img src="https://github.com/user-attachments/assets/43ab5eeb-80ff-4a7e-9297-b3e02b833755" /> </kbd>
  - Data Privacy Management
     - Encryption and Access Control: Data privacy is enforced by encrypting sensitive data using AWS KMS and restricting access through IAM policies. Only authorized users with the appropriate roles can access and manipulate sensitive data, ensuring that privacy is maintained.
  - Data Versioning: S3 versioning is enabled to maintain a history of changes to the data. This allows for the recovery of previous versions in case of accidental deletions or modifications, supporting data governance by providing data lineage and audit trails.
@@ -245,14 +162,13 @@ TBLPROPERTIES (
  - AWS CloudWatch for Real-Time Monitoring
     - Resource Monitoring: AWS CloudWatch is used to monitor key metrics of AWS resources, such as CPU utilization, memory usage, and network activity. It provides real-time insights into the performance of the data analytics platform.
     - Custom Metrics and Dashboards: CloudWatch allows the creation of custom metrics and dashboards for specific aspects of the data analytics platform. For example, monitoring the status of S3 buckets, ETL pipelines in AWS Glue, and data processing jobs helps track data flow and detect anomalies.
-<kbd> <img src="https://github.com/user-attachments/assets/a05efbac-af60-44cd-81da-ab08890589fb" /> </kbd>
     - Alarms and Notifications: CloudWatch Alarms are set up to trigger notifications when certain thresholds are breached (e.g., unusually high data access attempts, resource usage spikes). This proactive monitoring helps in identifying and mitigating potential security incidents or performance issues.
-<kbd> <img src="https://github.com/user-attachments/assets/40569bee-8274-4b29-87da-14e4a46eb538" /> </kbd>
+<kbd> <img src="https://github.com/user-attachments/assets/4cd98b72-9926-4883-8790-b7caaa13f956" /> </kbd>
  - AWS CloudTrail for Audit Logging
     - Activity Logging: AWS CloudTrail captures and logs all API calls made within the AWS environment. This includes actions performed on data stored in S3, modifications to IAM roles, and operations within AWS Glue.
     - Audit Trails: CloudTrail logs serve as an audit trail, documenting who accessed or modified the data and when these actions occurred. This is crucial for tracking unauthorized access attempts and ensuring compliance with data governance policies.
     - Event History: CloudTrail maintains a history of events for a specified period, allowing for a retrospective analysis of data access and usage patterns. This can be used to detect unusual activity or verify compliance with data privacy regulations.
-<kbd> <img src="https://github.com/user-attachments/assets/ebed967a-7e96-4352-8cc4-b166400a284a" /> </kbd>
+<kbd> <img src="https://github.com/user-attachments/assets/801ab0df-9cc8-4351-8f9f-5e2b9ec535e7" /> </kbd>
 
 ## AWS Services Utilised
  - AWS Services:
@@ -266,37 +182,102 @@ TBLPROPERTIES (
     - Cost Explorer: Cost tracking and optimization.
       
 ## DAP Architectural Anlaysis
- - Operational Excellence
-    - Best Practices: The platform implements AWS best practices to enhance operational efficiency, reliability, and scalability. This includes using IAM for fine-grained access control and AWS Glue for structured data processing.
-    - Disaster Recovery: S3 bucket replication and versioning are used to implement disaster recovery strategies. Replicated buckets and versioning ensure that data is recoverable in the event of accidental deletion or corruption.
-    - Real-Time Monitoring: AWS CloudWatch monitors the performance and health of the platform in real-time, enabling proactive identification of issues through automated alerts for key metrics like CPU usage and memory consumption.
- - Security
-    - Comprehensive Security Practices: Security is a core focus of the DAP architecture. IAM roles and policies are used to enforce the principle of least privilege, ensuring that users and applications have only the necessary access rights.
-    - Data Encryption: AWS KMS is used to encrypt sensitive data at rest in S3 buckets. Both symmetric and asymmetric encryption techniques are employed to ensure that data remains confidential and protected from unauthorized access.
-    - Auditing and Monitoring: AWS CloudTrail is enabled to log and monitor all user activities, providing a comprehensive audit trail. This logging ensures transparency, accountability, and the ability to detect potential security incidents promptly.
- - Reliability
-    - Data Redundancy and Versioning: Amazon S3 versioning is enabled to maintain multiple versions of objects, ensuring that previous versions are available in case of accidental deletions or modifications. This supports data integrity and reliability.
-    - Regular Backups: The platform employs regular backups of data and applications, facilitated through S3 bucket replication and automated processes in AWS Glue. This allows for quick restoration in the event of a failure.
-    - Data Quality and Integrity: AWS Glue is used to automate the data governance process, ensuring completeness, uniqueness, and freshness of data. This automation helps maintain the reliability of the datasets used for analysis.
- - Performance Efficiency
-    - Optimized Resource Usage: The platform is designed to use Amazon S3 for storing raw, processed, and curated datasets. This service is chosen for its ability to handle large volumes of data efficiently.
-    - Resource Monitoring and Tuning: AWS CloudWatch continuously monitors resource performance, including CPU utilization and memory usage. Performance metrics are tracked in real-time to identify bottlenecks and optimize resources.
-    - Right Sizing of Resources: The platform ensures that the instances and storage solutions are right-sized based on performance requirements, ensuring efficient resource allocation and avoiding over-provisioning.
- - Cost Optimization
-   - Cost Management: AWS Cost Explorer is used to monitor and analyze cost and usage patterns. This helps identify opportunities for cost savings, such as optimizing storage costs and minimizing redundant data processing.
-    - Data Quality Routing: Data quality is enhanced through conditional routing in the ETL pipeline, where only records passing quality checks are processed further. This reduces costs by avoiding storage of outdated, null, or redundant data.
-    - Elastic Resource Allocation: The platform adjusts the number of running instances based on the current needs. For example, it uses a general server during standard operations and scales to a web server when publishing data to the internet, optimizing resource costs.
- - Sustainability
-    - Long-Term Efficiency and Scalability: The architecture is designed to ensure long-term sustainability by focusing on efficient resource utilization. Services like Amazon S3 and Glue are used in a manner that allows for scalability while minimizing resource wastage.
-    - Resource Efficiency: By rightsizing instances and optimizing storage, the platform minimizes its carbon footprint and operational costs, supporting sustainable data management practices.
+
+  - Operational Excellence
+    - Best Practices: The platform follows AWS best practices to boost operational efficiency, reliability, and scalability. This includes leveraging IAM for granular access control and using AWS Glue for structured data processing.
+    - Disaster Recovery: S3 bucket replication and versioning are in place to support disaster recovery. These ensure that data is recoverable in the event of accidental deletion or corruption.
+    - Real-Time Monitoring: AWS CloudWatch provides real-time monitoring of platform performance and health, allowing for proactive issue detection through automated alerts for key metrics like CPU and memory usage.
+
+  - Security
+    - Comprehensive Security Practices: Security is a cornerstone of the DAP architecture. IAM roles and policies enforce the principle of least privilege, ensuring users and applications only have the access rights necessary.
+    - Data Encryption: AWS KMS is utilized to encrypt sensitive data at rest within S3 buckets. Both symmetric and asymmetric encryption methods are employed to protect data confidentiality and prevent unauthorized access.
+    - Auditing and Monitoring: AWS CloudTrail is enabled to log and track all user activity, creating a thorough audit trail. This enables transparency, accountability, and swift detection of potential security incidents.
+
+  - Reliability
+    - Data Redundancy and Versioning: Amazon S3 versioning is enabled to preserve multiple object versions, ensuring previous versions are available in case of accidental deletion or modification, supporting data reliability.
+    - Regular Backups: The platform regularly backs up data and applications using S3 bucket replication and automated AWS Glue processes, allowing for quick recovery in case of failure.
+    - Data Quality and Integrity: AWS Glue automates data governance to ensure completeness, uniqueness, and data freshness. This automation helps maintain the reliability of datasets used in analysis.
+
+  - Performance Efficiency
+    - Optimized Resource Usage: The platform efficiently uses Amazon S3 for storing raw, processed, and curated datasets, handling large volumes of data seamlessly.
+    - Resource Monitoring and Tuning: AWS CloudWatch continuously tracks resource performance, including CPU and memory usage. Bottlenecks are identified in real-time to optimize resource utilization.
+    - Right Sizing of Resources: The platform allocates resources, like instances and storage, based on performance needs, ensuring optimal resource allocation and avoiding over-provisioning.
+
+  - Cost Optimization
+    -Cost Management: AWS Cost Explorer monitors and analyzes cost and usage trends, identifying cost-saving opportunities by optimizing storage and minimizing redundant data processing.
+    - Data Quality Routing: Conditional routing in the ETL pipeline ensures that only records meeting quality checks are processed, reducing costs by preventing the storage of outdated or redundant data.
+    - Elastic Resource Allocation: The platform adjusts instance counts based on real-time demand. For example, it uses a general server for standard operations and scales to a web server for data publication, optimizing resource costs.
+  
+  - Sustainability
+    - Long-Term Efficiency and Scalability: The architecture is built for sustainability, focusing on efficient resource use. Services like Amazon S3 and Glue support scalability while minimizing resource waste.
+    - Resource Efficiency: Rightsizing instances and optimizing storage helps the platform reduce its carbon footprint and operational costs, promoting sustainable data management practices.
 
 ## Insights and Findings
- - Secure Data Analytics Platform: The project successfully implements a secure data analytics platform for the City of Vancouver using AWS services. Data protection is ensured through encryption (using AWS KMS) and access control (via IAM), safeguarding data confidentiality and integrity.
- - Effective Data Governance: The platform enforces data governance using AWS Glue for ETL processes and data quality checks, ensuring that only high-quality, clean data is used for analysis. IAM policies and S3 bucket structuring further support privacy and compliance.
- - Comprehensive Data Monitoring: Real-time monitoring using AWS CloudWatch and CloudTrail tracks resource usage, API activities, and data access. This continuous monitoring helps maintain operational transparency and swiftly detect anomalies or security issues.
- - Scalability and Cost Optimization: The architecture leverages AWS services like S3 and Glue to create a scalable platform capable of handling large datasets. Cost optimization is managed through AWS Cost Explorer, ensuring efficient resource usage.
- - Enhanced Data Security and Privacy: Encryption techniques and role-based access control ensure data privacy and compliance, critical for handling sensitive city data. Versioning in S3 maintains data integrity, allowing for recovery of previous data versions.
+ - Secure Data Analytics Platform: The project has successfully implemented a secure data analytics platform for the City of Vancouver using AWS services. Data protection is achieved through encryption (using AWS KMS) and access control (via IAM), ensuring the confidentiality and integrity of the data.
+ - Effective Data Governance: AWS Glue is utilized for ETL processes and data quality checks, ensuring that only high-quality, clean data is used for analysis. IAM policies and structured S3 buckets further enhance privacy, governance, and compliance.
+ - Comprehensive Data Monitoring: AWS CloudWatch and CloudTrail enable real-time monitoring of resource usage, API activities, and data access. This continuous monitoring maintains operational transparency and facilitates the quick detection of anomalies or security issues.
+ - Scalability and Cost Optimization: By leveraging AWS services like S3 and Glue, the architecture provides a scalable platform capable of handling large datasets. AWS Cost Explorer helps optimize resources, ensuring cost-effective operations.
+ - Enhanced Data Security and Privacy: Data privacy is ensured through encryption techniques and role-based access control, which are crucial for managing sensitive city data. S3 versioning maintains data integrity by allowing recovery of previous versions when needed.
 
 ## Conclusion
- - The AWS Data Analytics Platform for the City of Vancouver successfully establishes a secure, scalable, and efficient environment for managing and analyzing city datasets. By leveraging a combination of AWS services, including IAM, KMS, S3, Glue, CloudWatch, and CloudTrail, the platform ensures robust data protection, governance, and real-time monitoring. This approach not only safeguards sensitive data through encryption and access controls but also enhances data quality and integrity through meticulous ETL processes and data governance practices.
- - The platform is designed to adapt to varying data volumes and analytical needs, demonstrating both scalability and cost efficiency. It sets a strong foundation for data-driven decision-making while adhering to privacy and compliance standards. This project showcases how cloud-based solutions can be effectively utilized to meet the complex data management needs of public sector entities. Moving forward, the platform can be further enhanced with advanced analytics and automated governance to provide deeper insights and continuous optimization.
+ - The AWS Data Analytics Platform for the City of Vancouver successfully delivers a secure, scalable, and efficient solution for managing and analyzing city datasets. It leverages a range of AWS services, such as IAM, KMS, S3, Glue, CloudWatch, and CloudTrail, to ensure strong data protection, governance, and real-time monitoring. This approach safeguards sensitive data through encryption and access control while enhancing data quality and integrity through rigorous ETL processes and data governance.
+ - The platform is designed to scale with fluctuating data volumes and diverse analytical requirements, ensuring both flexibility and cost efficiency. It lays a solid foundation for data-driven decision-making, adhering to strict privacy and compliance standards. Moving forward, the platform can be enhanced with advanced analytics and automated governance features to offer deeper insights and continuous improvement. This project highlights the effectiveness of cloud-based solutions in addressing the complex data management needs of public sector organizations.
+
+# Project 3 Objective
+ - The objective of this project is to accurately calculate the successful policies developed for the years 2023 and 2024 at the University of Canada West (UCW).
+
+## Table of Contents
+ - [Dataset Preparation](#dataset-preparation)
+ - [AWS Services](#aws-services)
+ - [Data Cleaning and Structuring](#data-cleaning-and-structuring)
+ - [Data Pipeline Implementation](#data-pipeline-Implementation)
+ - [Outcome](#outcome)
+ - [Insights and Findings](#insights-and-findings)
+ - [Conclusion](#conclusion)
+
+## Dataset Preparation
+ - Sample dataset includes two Excel files
+    - Sample Student Records Information.
+<kbd> <img src="https://github.com/user-attachments/assets/c62aede6-ba88-4d1d-b983-60fa152a3620" /> </kbd>
+   
+## AWS Services
+ - AWS Services:
+    - Storage in Amazon S3
+    - Cleaning and Structuring in AWS GlueData
+    - Data Pipeline in AWS Glue 
+
+## Data Cleaning and Structuring
+  - The process includes the following operations:
+    - Identifying and handling invalid values, such as null entries in the dataset.
+    - Renaming column headers for consistency and clarity.
+    - Modifying data types for columns as needed.
+    - Altering the schema, including the addition of new columns.
+    - Creating and publishing data cleaning recipes.
+ 
+<kbd> <img src="https://github.com/user-attachments/assets/79760bfc-1eea-4858-9209-e6b07352cbfd" /> </kbd>
+
+## Data Pipeline Implementation:
+ - Implemented using AWS Glue for ETL processes.
+ - Transformation operations included schema changes, aggregation, and union operations.
+   
+<kbd> <img src="https://github.com/user-attachments/assets/9ab2a6db-7845-42eb-9669-c8e9e186ee8b" /> </kbd>
+
+## Outcome
+ - Figure shows the determination of metrics as deduced from ETL Glue.
+   
+<kbd> <img src="https://github.com/user-attachments/assets/1ed47fbf-bea2-49b3-a7cf-d259b0935279" /> </kbd>
+
+## Insights and Findings
+ - Approved Policy Rate (APR) for 2023:
+    - The approval rate for the year 2023 is 96.55%.
+    - This indicates that most of the policies were reliant and accepted by the stakeholders in 2023.
+      
+ - Approved Policy Rate (APR) for 2024:
+    - The approval rate for the year 2024 is 23.80%.
+    - This shows a depriciation over the 2023 approval rate, suggesting bad decisions from the board and stakeholders.
+
+
+## Conclusion
+  - The project efficiently leverages AWS Glue DataBrew for data cleaning and transformation, executing the ETL pipeline to successfully calculate the policy approval rate.
+  - The workflow is structured, with well-defined steps for extracting, transforming, and loading data into an S3 bucket, ensuring smooth data processing from preparation to final output generation.
+  - The project’s goal is to analyze university-developed policies using a systematic data processing approach, and the documented pipeline outlines a thorough methodology to achieve this objective.
